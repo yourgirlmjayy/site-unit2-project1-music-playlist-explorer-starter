@@ -26,15 +26,25 @@ function makeCards(){
         creatorname.innerHTML = d["playlist_creator"]
         card.appendChild(creatorname);
 
-
-        const numoflikes = document.createElement("div");
-        numoflikes.innerHTML = d["likeCount"]
-        card.appendChild(numoflikes);
-
         var loveicon = document.createElement("span");
         loveicon.innerHTML =  
             `<i class="fa-regular fa-heart" id =${d.playlistID}></i>` 
         card.appendChild(loveicon);
+
+        const numoflikes = document.createElement("span");
+        numoflikes.innerHTML = d["likeCount"]
+        card.appendChild(numoflikes);
+
+        //import trash icon 
+        var trashicon = document.createElement("span");
+        trashicon.innerHTML = ` <i class = "fa-solid fa-trash"></i>`
+        card.appendChild(trashicon);
+        //when delete button is clicked, remove playlist
+        trashicon.addEventListener('click', (event)=>{
+            event.stopPropagation();
+            card.remove()
+
+        })
 
         document.getElementById("playlist-grid").appendChild(card);
 
