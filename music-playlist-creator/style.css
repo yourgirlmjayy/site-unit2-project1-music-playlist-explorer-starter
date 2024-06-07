@@ -1,9 +1,11 @@
 @font-face {
+    /* import font for body*/
     font-family: myFont;
     src: url(Wigglye.ttf);
 }
 
 @font-face {
+    /* import font for modal*/
     font-family: modalFont;
     src: url(Cookie-Regular.ttf);
 }
@@ -67,9 +69,9 @@ main {
 }
 
 .playlist-cards {
-    display: flex;
+    display: flex; /*set each card as flex box*/
     flex-flow: wrap;
-    justify-content: space-around;
+    justify-content: space-around; /*spread out space between boxes evenly*/
 
 }
 
@@ -96,10 +98,7 @@ main {
 
 .playlist-blocks:hover {
     transform: translate(-10px, -10px) scale(1.05);
-    cursor: pointer;
-    /* background-color: #ced4da;
-    border: 5px rgb(154, 154, 50);
-    box-shadow: 5px 5px #105a38; */
+    cursor: pointer; /*for accessibility*/
 }
 
 .playlist-blocks::before,
