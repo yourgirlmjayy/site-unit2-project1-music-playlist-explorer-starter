@@ -1,113 +1,251 @@
+@font-face {
+    font-family: myFont;
+    src: url(Wigglye.ttf);
+}
 
-*{
+@font-face {
+    font-family: modalFont;
+    src: url(Cookie-Regular.ttf);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: Licorice, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
-    padding: 0;
-    /* color: navy;  */
     background-image: url(./assets/img/bodybg.gif);
     background-size: cover;
 }
 
-header, footer{
-    padding: lem;
+header,
+footer {
+    padding: 12px;
     background-color: skyblue;
     text-align: center;
-    font-size: zem;
+    font-size: 2em;
     font-weight: bold;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
-    border-bottom: 4px solid rgb(8, 0, 76);
+    color: #365572;
+    box-shadow: 0 1px 6px rgba(18, 18, 18, 0.3);
+    border-bottom: 3px solid rgb(8, 0, 76);
+    font-family: myFont;
 }
-header h1, footer p{
-    margin: 0;
+
+header h1,
+footer p {
+    margin-bottom: 10px;
 }
-main{
+
+header p {
+    font-size: 65%;
+}
+
+main {
     padding: 1em;
 }
-h1 {
-    font-family: Licorice, sans-serif;
-    font-size: 2em;
-}
-.playlist-cards{
+
+.playlist-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: space-around;
+
 }
-.playlist-grid{
+
+.playlist-grid {
     text-align: center;
     font-size: 0.75em;
-    display: flex;
-    flex-wrap: wrap;
-}
-/* .playlist-cards:hover{
-    transform: scale(0.9);
-    /* box-shadow: 0 8px 16px rgba(0,0,0,0.7); 
-} */
 
-.playlist-blocks{
+}
+
+.playlist-blocks {
     border: 5px solid;
-    padding: 50px;
-    margin: 10px 0px 10px 10px;
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
     width: min-content;
     display: inline-block;
-    background-color: aliceblue;
+    box-shadow: 4px 4px #28302c;
+    background-color: rgb(158, 179, 198);
     text-align: center;
+    font-family: myFont;
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.3s;
+    border: white;
+    ;
 }
-.image-function{
+
+.playlist-blocks:hover {
+    transform: translate(-10px, -10px) scale(1.05);
+    cursor: pointer;
+    /* background-color: #ced4da;
+    border: 5px rgb(154, 154, 50);
+    box-shadow: 5px 5px #105a38; */
+}
+
+.playlist-blocks::before,
+.playlist-blocks::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: transform 0.3 ease, opacity 0.3 ease, opacity 0.3 ease;
+    z-index: -1;
+}
+
+.playlist-blocks::before {
+    transform: translate(5px, 5px) scale(0.95);
+    opacity: 0;
+}
+
+.playlist-blocks::after {
+    transform: translate(10px, 10px) scale(0.9);
+    opacity: 0;
+}
+
+.playlist-blocks:hover::before {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+}
+
+.playlist-blocks:hover::after {
+    transform: translate(-5px, -5px) scale(1);
+    opacity: 0.1;
+}
+
+.image-function {
     width: 100px;
     border: 40px;
     margin: 20px;
 }
 
-.playlist-cover{
-    width: 100%;
-    height: auto;
-    border-bottom: 3px solid rgb(255, 123, 0);
-
-}
-
 .modal {
-    position: fixed; /* Stay in place */
+    position: fixed;
+    /* Stay in place */
     padding: 20px;
-    z-index: 1; /* Sit on top */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     display: none;
- }
- .modal-content {
+}
+
+.modal-content {
     max-width: 800px;
-    background-color: #fefefe;
-    margin: 10% auto; /* 15% from the top and centered */
+    background-color: skyblue;
+    margin: 10% auto;
+    /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #457fb4;
-    width: 60%; /* Could be more or less, depending on screen size */
-    color: white;
+    border: 1px solid #365572;
+    width: 60%;
+    text-decoration-color: beige;
+    font-family: modalFont;
+    font-size: large;
+    color: #28302c;
     animation: slideIn 0.5s;
- }
- .modal-overlay{
+}
+
+
+.modal-overlay {
     background-color: skyblue;
     margin: 12%;
-    padding: 20px;
+    padding: 3%;
     width: 80%;
- }
+}
 
- .close {
-    color: #7faed4;
+.overlay-blocks {
+    display: flex;
+    height: 11vh;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+
+.modal-overlay-content {
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid rgb(56, 56, 137);
+    transition: transform 0.3s;
+    box-shadow: 3px 3px #28302c;
+}
+.modal-overlay-content:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.meta-data {
+    display: flex;
+    flex-flow: row;
+    padding-bottom: 30px;
+    font-size: small;
+    overflow: clip;
+}
+
+.song-data {
+    padding-left: 20px;
+    text-wrap: nowrap;
+    overflow: clip;
+    font-family: modalFont;
+    font-size: large;
+    color: #28302c;
+}
+.song-images {
+    display: flex;
+    height: 10vh;
+}
+
+.fa-heart {
+    font-size: 1.3em;
+    transition: color 0.3s;
+}
+
+.fa-heart:hover {
+    color: #3a4942;
+    background-color: #699a81;
+    box-shadow: 0 0 2px rgba(14, 14, 14, 0.1);
+    /* subtle box shadow */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.shuffle-button {
+    background-color: #365572;
+    display: flex;
+    text-align: center;
+    color: #ced4da;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, background-color 0.3 ease;
+    font-size: 16px;
+    border: none;
+}
+
+.shuffle-button:hover {
+    transform: scale(1.1);
+    background-color: #001c77;
+    cursor: pointer;
+}
+
+.close {
+    color: #fff;
     float: right;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: bold;
- }
- .close:hover,
- .close:focus {
-    color: black;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
     text-decoration: none;
+    cursor: pointer;
 
- }
-
+}

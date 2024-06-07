@@ -15,46 +15,36 @@
 <body>
     <header>
         <h1> Music Playlist Explorer </h1>
-        <p> Your one stop for top music playlists</p>
+        <p> ~Your one stop for top music playlists~</p>
     </header>
 
     <main>
         <!-- Your main content here -->
-        <div id="playlist-grid" class="playlist-grid">
-
-        </div>
+        <div id="playlist-grid" class="playlist-grid"></div>
     </main>
 
-    <!-- <div class = "playlist-cards">
-        <section class = "playlist-blocks">
-            <img class = "image-function" src = "/assets/img/playlist.png" alt = "Playlist cover image"/>
-            <div id = "Playlist Title"></div>
-            <h3>Playlist Title</h3>
-            <p>Creator Name</p>
-            <link href = 'https://unpkg.com/css.gg@2.0.0/icons/css/heart.css' rel = 'stylesheet' > 
-            <p> Like count</p>
-        </section> -->
-
     </div>
-    <!-- </div> -->
+    <!-- playlist modal div -->
     <div id="playlistmodal" class="modal">
-        <div class="modal-overlay">
+        <div class="modal-content">
             <span class="close" id="close-modal">&times;</span>
             <h2 id="PlaylistName">Playlist title</h2>
-            <img src="" alt="Playlist Image" id="modal-cover">
+            <img src="" alt="Playlist Image" id="modal-cover" class="modal-cover" style="height:50px; width: 50px">
+            <p id="modal-creator" ></p>
+            <button class = "shuffle-button"><i class = "fas fa-random"></i>  Shuffle </button>
 
-            <p id="modal-creator" >Creator name</p>
             <!-- <button id = "shuffle button" class = "shuffle-button">Shuffle</button>
                 <div class="modal-songs"> -->
-
-            <section class="song">
+                    
+            <section class="song" id = "song-container">
                 <!-- <img src = "assets/img/playlist.png" alt = "Song cover" class = "song"> -->
                 <div class="song-details">
-                    <p id="Song-title">Song Title</p>
-                    <p id="Song-artist">Song Artist</p>
-                    <div id="Song-album">Song Album</div>
+                   <div><p id="Song-title"></p><p id="Song-artist"></p></div> 
+                    <img id="song-image"/>
+                    
                 </div>
             </section>
+
             <!-- </div> -->
         </div>
     </div>
