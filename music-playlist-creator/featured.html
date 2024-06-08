@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title> Feature page </title>
 </head>
 <body>
     <header>
         <h1>~Welcome to Music Playlist Explorer~</h1>
-        <button id = "featuredPlaylist"> Featured Playlists</button>
+       <a href="index.html"><button id = "featuredPlaylist"> Featured Playlists</button></a>
     </header>
 
     <main>
-        <div class = "featured-playlist-container">
-            <div id ="playlist-image" class="playlist-image"></div>
-            <div id = "playlist-name" id ="playlist-name"></div>
-            <div id ="playlist-creator" id="playlist-creator"></div>
+        <div class="entireFeatureContainer">
+            <div class = "featured-playlist-container">
+                <img src= "" id ="playlist-image" class="playlist-image" />
+                <div id = "playlist-name" class ="playlist-name"></div>
+                <div id ="playlist-creator" class="playlist-creator"></div>
+            </div>
+    
+            <div class = "featured-songs" id = "featured-songs"></div>
         </div>
+
+        <div id="featured-songs-container" class="featured-songs-container"></div>
     </main>
 
     <footer class="homeFooter" ></footer>

@@ -259,6 +259,63 @@ main {
     cursor: pointer;
 }
 
+.song-card {
+    border: 2px white solid;
+    background-color: rgb(255, 255, 255, .7);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 1200px;
+    color: rgb(13, 13, 188);
+    /* text-align: center; */
+}
+.song-image{
+    width: 255px;
+}
+.song-artist{
+    text-align: center;
+}
+.song-title{
+    text-align: center;
+}
+.song-album{
+    text-align: center;
+}
+.entireFeatureContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.featured-playlist-container img{
+    width: 400px;
+}
+.featured-playlist-container {
+    text-align: center;
+    border: 2px white solid;
+    background-color: rgb(255, 255, 255, .7);
+    padding: 20px;
+    /* background-color: lightskyblue; */
+    background-size: 200px 100px; /* adjust the values to your liking */
+    background-repeat: repeat;
+    box-shadow: 5px 5px 10px rgba(122, 113, 113, 0.2);
+    transition: all 0.3s ease-in-out;
+    height: 500px;
+    color: rgb(13, 13, 188)
+  }
+
+.fa-lg{
+    background-color: skyblue;
+    font-size: x-large;
+}
+#featuredPlaylist:hover{
+    transform: scale(1.1);
+    background-color: gray;
+    cursor: pointer;
+}
+.featuredPlaylist{
+    color:#28302c;
+}
+
 .close {
     color: #fff;
     float: right;
@@ -273,3 +330,4 @@ main {
     cursor: pointer;
 
 }
+
