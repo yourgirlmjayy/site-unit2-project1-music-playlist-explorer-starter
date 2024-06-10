@@ -307,6 +307,12 @@ main {
     background-color: skyblue;
     font-size: x-large;
 }
+
+.fa-lg:hover{
+    background-color: #193a5a;
+    cursor: pointer; /*for accessibility*/
+}
+
 #featuredPlaylist:hover{
     transform: scale(1.1);
     background-color: gray;

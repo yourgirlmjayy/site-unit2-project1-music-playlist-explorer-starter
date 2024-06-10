@@ -81,3 +81,4 @@ Add your response here
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 ***SHOUTOUT TO PAIGE AND SAMMY***
+**Tosin, Izu, Theo, Eric, Destiny**
